@@ -3,3 +3,5 @@ services:
   st-redis:
     image: redis:7.4.2-alpine
     container_name: redis
+    ports:
+      - "6379:6379"

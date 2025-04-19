@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.shieldteq'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.redisson:redisson:3.45.1'
+    implementation 'io.projectreactor:reactor-test:3.6.11'
+
+    compileOnly("org.projectlombok:lombok:1.18.38")
+    annotationProcessor("org.projectlombok:lombok:1.18.38")
+
+    implementation platform('io.projectreactor:reactor-bom:2024.0.5')
+    testImplementation 'io.projectreactor:reactor-test:3.6.11'
+
+    testCompileOnly("org.projectlombok:lombok:1.18.38")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.38")
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
